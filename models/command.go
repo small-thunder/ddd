@@ -78,11 +78,11 @@ func (sender *Sender) handleJdCookies(handle func(ck *JdCookie)) error {
 		}
 		if !ok {
 			sender.Reply("提醒：该账号已过期，请重新登录。" +
-				"抓取CK教程点击右边蓝色链接 https://blog.csdn.net/weixin_42400413/article/details/120091786 \n\t " +
-				"——安卓用户须手动提取pt_key和pt_pin，格式如：\"pt_key=xxxxxxxxxx;pt_pin=xxxxxx;\"。\n\t" +
-				"——IOS用户可以使用快捷指令 https://www.icloud.com/shortcuts/f0bf8b56bd0949afabfc00ca6fbfb4c2 \n\t " +
-				"显示“更新账号XXX”/“新增账号XXX”即更新/新增成功，不用理会红色提示框。")
-			return errors.New("提醒：该账号已过期，请重新登录。\" +\n\t\t\t\t\"抓取CK教程点击右边蓝色链接 https://blog.csdn.net/weixin_42400413/article/details/120091786 \\n\\t \" +\n\t\t\t\t\"——安卓用户须手动提取pt_key和pt_pin，格式如：\\\"pt_key=xxxxxxxxxx;pt_pin=xxxxxx;\\\"。\\n\\t\" +\n\t\t\t\t\"——IOS用户可以使用快捷指令 https://www.icloud.com/shortcuts/f0bf8b56bd0949afabfc00ca6fbfb4c2 \\n\\t \" +\n\t\t\t\t\"显示“更新账号XXX”/“新增账号XXX”即更新/新增成功，不用理会红色提示框。")
+				"抓取CK教程点击右边蓝色链接\n\t https://blog.csdn.net/weixin_42400413/article/details/120091786 \n\t \n\t" +
+				"——安卓用户须手动提取pt_key和pt_pin，格式如：\"pt_key=xxxxxxxxxx;pt_pin=xxxxxx;\"。\n\t \n\t" +
+				"——IOS用户可以使用快捷指令\n\t https://www.icloud.com/shortcuts/f0bf8b56bd0949afabfc00ca6fbfb4c2 \n\t \n\t" +
+				"显示“更新账号XXX”/“新增账号XXX”即更新/新增成功!")
+			return errors.New("提醒：该账号已过期，请重新登录。\" +\n\t\t\t\t\"抓取CK教程点击右边蓝色链接\\n\\t https://blog.csdn.net/weixin_42400413/article/details/120091786 \\n\\t \\n\\t\" +\n\t\t\t\t\"——安卓用户须手动提取pt_key和pt_pin，格式如：\\\"pt_key=xxxxxxxxxx;pt_pin=xxxxxx;\\\"。\\n\\t \\n\\t\" +\n\t\t\t\t\"——IOS用户可以使用快捷指令\\n\\t https://www.icloud.com/shortcuts/f0bf8b56bd0949afabfc00ca6fbfb4c2 \\n\\t \\n\\t\" +\n\t\t\t\t\"显示“更新账号XXX”/“新增账号XXX”即更新/新增成功!")
 		}
 	} else {
 		cks = LimitJdCookie(cks, a)
