@@ -15,6 +15,17 @@ type User struct {
 	Coin     int
 }
 
+func AdddCoin(uid int, num int) int {
+	var u User
+	if db.Where("number = ?", uid).First(&u).Error != nil {
+		return 0
+	}
+	db.Model(u).Updates(map[string]interface{}{
+		"coin": gorm.Expr(fmt.Sprintf("coin+%d", num)),
+	})
+	u.Coin += num
+	return u.Coin
+}
 func AddCoin(uid int) int {
 	var u User
 	if db.Where("number = ?", uid).First(&u).Error != nil {
